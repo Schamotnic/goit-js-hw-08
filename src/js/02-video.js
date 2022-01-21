@@ -11,7 +11,7 @@
     });
 
     const callback = function() {
-      //  console.log(callback);
+       console.log(callback);
     };
 
 player.off('eventName', callback);
