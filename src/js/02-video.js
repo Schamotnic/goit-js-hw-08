@@ -2,16 +2,19 @@
     const iframe = document.querySelector('iframe');
     const player = new Vimeo.Player(iframe);
 
-    player.on('play', function() {
-        console.log('played the video!');
+    player.on('play', function(data) {
+        playerSecond = data.seconds
+        localStorage.setItem("videoplayer-current-time",playerSecond); 
+        
+        
     });
+    
+    player.setCurrentTime().then(function(playerSecond) {
+    
+  });
 
-    player.getVideoTitle().then(function(title) {
-        console.log('title:', title);
-    });
+       
 
-    const callback = function() {
-       console.log(callback);
-    };
+        
 
-player.off('eventName', callback);
+   
